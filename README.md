@@ -1,4 +1,4 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+This is a project by [Ionic](http://ionicframework.com/docs/);
 
 ## How to use this template
 
