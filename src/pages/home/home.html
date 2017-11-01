@@ -1,0 +1,117 @@
+<ion-content>
+  <!-- 轮播 -->
+  <ion-list>
+    <ion-item>
+      <ion-slides pager class="top">
+        <ion-slide>
+          <ion-row align-items-center>
+            <ion-col col-3 align-self-center *ngFor="let logo of logo1" (click)="set(logo);goToRankingPage(logo)">
+              <button ion-button clear>
+                <img src="{{logo.imgSrc}}" alt="">
+              </button>
+              <p>{{logo.logoName}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row align-items-center>
+            <ion-col col-3 align-self-center *ngFor="let logo of logo2" (click)="set(logo);goToRankingPage(logo)">
+              <button ion-button clear>
+                <img src="{{logo.imgSrc}}" alt="">
+              </button>
+              <p>{{logo.logoName}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row align-items-center>
+            <ion-col col-3 align-self-center *ngFor="let logo of logo3" (click)="set(logo);goToRankingPage(logo)">
+              <button ion-button clear>
+                <img src="{{logo.imgSrc}}" alt="">
+              </button>
+              <p>{{logo.logoName}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+      </ion-slides>
+    </ion-item>
+  </ion-list>
+  <!-- 榜单 -->
+  <ion-row>
+    <ion-col col-6>
+      <ion-item (click)="goToSevenHotRank()">
+        <ion-avatar item-end>
+          <img src="assets/img/hot.png">
+        </ion-avatar>
+        <h2>热门榜单</h2>
+        <p>HOT RANK</p>
+      </ion-item>
+    </ion-col>
+    <ion-col col-6>
+      <ion-item (click)="goToAddedRank()">
+        <!-- <ion-item (click)="cal()"> -->
+        <ion-avatar item-end>
+          <img src="assets/img/new.png">
+        </ion-avatar>
+        <h2>新增榜单</h2>
+        <p>NEW RANK</p>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <!-- 全球好货榜 -->
+  <ion-item>
+    <ion-slides autoplay="1000" speed="1000" slidesPerView="3" spaceBetween="10">
+      <ion-slide *ngFor="let list of rankList" (click)="goToRankDetailPage(list)">
+        <img src="assets/img/p3.jpg" alt="">
+        <h2>{{list.name}}</h2>
+      </ion-slide>
+    </ion-slides>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-slides slidesPerView="3">
+      <ion-slide *ngFor="let list of rankList" (click)="print(list)">
+        <img src="assets/img/p3.jpg" alt="">
+        <h2>{{list.name}}</h2>
+      </ion-slide>
+    </ion-slides>
+  </ion-item> -->
+
+  <!-- 大家都在买 -->
+  <ion-list>
+    <ion-item>
+      <p>大家都在买</p>
+      <p item-right class="change" (click)="change()">换一批</p>
+      <ion-icon name="refresh" item-end class="change"></ion-icon>
+    </ion-item>
+    <ion-item>
+
+      <ion-row>
+        <ion-col col-4 *ngFor="let product of product" (click)="goToProductDetailPage(product)">
+          <img src="{{product.imgSrc}}" alt="">
+          <h2 class="desc">{{product.name}}</h2>
+          <p class="price">
+            &yen;{{product.price}}
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <p>专题文章</p>
+      <ion-icon name="arrow-forward" item-end></ion-icon>
+    </ion-item>
+    <ion-slides slidesPerView="1.2">
+      <ion-slide *ngFor="let article of articles">
+        <ion-card>
+          <div (click)="goToArticle(article)">
+            <img src="{{article.articleImgSrc}}" />
+          </div>
+          <div class="card-title">{{article.title}}</div>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-list>
+
+</ion-content>

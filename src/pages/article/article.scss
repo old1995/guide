@@ -1,0 +1,9 @@
+page-article {
+  $navbar-md-height: 20px;
+  .article {
+    height: $navbar-md-height;
+  }
+  .header-md::after {
+    background-image: none;
+  }
+}

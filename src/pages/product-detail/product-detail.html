@@ -1,0 +1,21 @@
+<ion-header no-border>
+
+  <ion-navbar #header>
+    <ion-title>{{product.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content fullscreen (ionScroll)="scrollEvent($event)">
+  <ion-item>
+    <img src="{{product.imgSrc}}" alt="">
+  </ion-item>
+  <ion-item>
+    <ion-list text-center>
+      {{product.name}}
+    </ion-list>
+    <ion-list text-center>
+      &yen; {{product.price}}
+    </ion-list>
+  </ion-item>
+</ion-content>

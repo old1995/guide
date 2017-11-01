@@ -1,0 +1,186 @@
+<!--
+  Generated template for the CityPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>city</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content>
+  <ion-item>
+    <p>城市指南-广州
+      <ion-icon name="arrow-forward"></ion-icon>
+    </p>
+  </ion-item>
+  <!-- 头部榜单 -->
+  <ion-item>
+    <ion-slides slidesPerView="3">
+      <ion-slide>
+        <ion-card>
+          <img src="http://www.placehold.it/90x130" />
+          <div class="card-title">星级餐厅榜</div>
+          <div class="card-subtitle">传统佳肴品鉴经典</div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="http://www.placehold.it/90x130" />
+          <div class="card-title">优选餐厅榜</div>
+          <div class="card-subtitle">精品食美口碑担当</div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="http://www.placehold.it/90x130" />
+          <div class="card-title">风味餐厅榜</div>
+          <div class="card-subtitle">市井味道撩胃美食</div>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-item>
+  <!-- 第二排 -->
+  <ion-item>
+    <ion-slides slidesPerView="2.2">
+      <ion-slide>
+        <p item-left>旅游住宿</p>
+        <img item-right src="assets/img/2.png" alt="" style="width:50px;height:50px;">
+      </ion-slide>
+      <ion-slide>
+        <p item-left>旅游住宿</p>
+        <img item-right src="assets/img/2.png" alt="" style="width:50px;height:50px;">
+      </ion-slide>
+      <ion-slide>
+        <p item-left>旅游住宿</p>
+        <img item-right src="assets/img/2.png" alt="" style="width:50px;height:50px;">
+      </ion-slide>
+      <ion-slide>
+        <p item-left>旅游住宿</p>
+        <img item-right src="assets/img/2.png" alt="" style="width:50px;height:50px;">
+      </ion-slide>
+      <ion-slide>
+        <p item-left>旅游住宿</p>
+        <img item-right src="assets/img/2.png" alt="" style="width:50px;height:50px;">
+      </ion-slide>
+    </ion-slides>
+  </ion-item>
+
+  <!-- 本周热辣新榜 -->
+
+  <ion-list>
+    <ion-item>
+      <p>本周热辣新榜</p>
+      <ion-icon name="arrow-forward" item-end></ion-icon>
+    </ion-item>
+    <ion-item *ngFor="let rankList of rankList | slice:0:2;let i = index" (click)="goToRankDetail()">
+      <div item-start>
+        <h2>{{i+1}}</h2>
+        <p>NUM</p>
+      </div>
+      <ion-thumbnail item-left>
+        <img src="assets/img/2.png">
+      </ion-thumbnail>
+      <h2>{{rankList.name}}</h2>
+      <p>{{rankList.desc}}</p>
+    </ion-item>
+  </ion-list>
+
+  <!-- 排名第一的人气餐厅 -->
+  <ion-list>
+    <ion-item>
+      <p>排名第一的人气餐厅</p>
+      <ion-icon name="arrow-forward" item-end></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-6>
+          <img src="http://www.placehold.it/140x120" alt="">
+          <p>name</p>
+          <p>price</p>
+        </ion-col>
+        <ion-col col-6>
+          <img src="http://www.placehold.it/140x120" alt="">
+          <p>name</p>
+          <p>price</p>
+        </ion-col>
+        <ion-col col-6>
+          <img src="http://www.placehold.it/140x120" alt="">
+          <p>name</p>
+          <p>price</p>
+        </ion-col>
+        <ion-col col-6>
+          <img src="http://www.placehold.it/140x120" alt="">
+          <p>name</p>
+          <p>price</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+
+  <!-- 人均百元左右的网红店 -->
+  <ion-list>
+    <ion-item>
+      <p>人均百元的网红店</p>
+      <ion-icon name="arrow-forward" item-end></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col col-12>
+          <img src="assets/img/zgr.gif" alt="">
+          <div class="title">
+            人均14~
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <img src="assets/img/zgr.gif" alt="">
+          <div class="title"></div>
+          <h2>陈仔烧腊点</h2>
+          <p>可以说非常好吃了</p>
+        </ion-col>
+        <ion-col col-6>
+          <img src="assets/img/zgr.gif" alt="">
+          <div class="title"></div>
+          <h2>陈仔烧腊点</h2>
+          <p>可以说非常好吃了</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+
+  <!-- 吃喝玩乐in广州 -->
+  <ion-list>
+    <ion-item>
+      <p>吃喝玩乐IN广州</p>
+    </ion-item>
+    <ion-slides>
+      <ion-slide>
+        <img src="assets/img/zgr.gif" alt="">
+        <div class="title"></div>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/img/zgr.gif" alt="">
+        <div class="title"></div>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/img/zgr.gif" alt="">
+        <div class="title"></div>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/img/zgr.gif" alt="">
+        <div class="title"></div>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/img/zgr.gif" alt="">
+        <div class="title"></div>
+      </ion-slide>
+    </ion-slides>
+  </ion-list>
+</ion-content>

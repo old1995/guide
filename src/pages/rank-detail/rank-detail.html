@@ -1,0 +1,108 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{list.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+  <div>
+    <ion-segment [(ngModel)]="nav">
+      <ion-segment-button value="comprehensive">
+        综合榜
+      </ion-segment-button>
+      <ion-segment-button value="characteristic">
+        特色榜
+      </ion-segment-button>
+      <ion-segment-button value="popularity">
+        人气榜
+      </ion-segment-button>
+      <ion-segment-button value="encyclopedias">
+        知识百科
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div [(ngSwitch)]="nav" class="hi">
+    <ion-list *ngSwitchCase="'comprehensive'">
+
+      <ion-segment [(ngModel)]="nav">
+        <ion-slides slidesPerView="5">
+          <ion-slide *ngFor="let item of zhibiaoList;let i = index" class="a">
+            <ion-segment-button value="{{i}}" text-center (click)="getN(i)">
+              {{item.name}}
+            </ion-segment-button>
+          </ion-slide>
+        </ion-slides>
+      </ion-segment>
+
+      <div [(ngSwitch)]="nav">
+        <ion-list *ngFor="let item of getZhiBiaoName(n)">
+          {{item.name}} - {{item.score}}
+        </ion-list>
+
+        <!-- 详情 -->
+        <ion-item>
+          <ion-list *ngFor="let list of rightList.list">
+            <ion-row id="{{list.name}}">
+              <ion-col col-2>
+                分值
+              </ion-col>
+              <ion-col col-10>
+                {{list.sc[0].score}}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-2>
+                01
+              </ion-col>
+              <ion-col col-8>
+                {{list.name}}/{{list.location}}
+              </ion-col>
+              <ion-col col-2>
+                关注
+              </ion-col>
+            </ion-row>
+            <div class="text">为了与当时为了与当时为了与当时为了与当时为了与当时为了与当时为了与当时 为了与当时为了与当时为了与当时为了与当时为了与当时为了与当时 为了与当时为了与当时为了与当时为了与当时为了与当时为了与当时
+            </div>
+          </ion-list>
+        </ion-item>
+      </div>
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'characteristic'">
+
+      <ion-segment [(ngModel)]="two">
+        <ion-segment-button value="21">
+          1
+        </ion-segment-button>
+        <ion-segment-button value="22">
+          2
+        </ion-segment-button>
+      </ion-segment>
+
+      <div [ngSwitch]="two">
+        <ion-list *ngSwitchCase="21">
+          a
+        </ion-list>
+        <ion-list *ngSwitchCase="22">
+          b
+        </ion-list>
+      </div>
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'popularity'">
+      人气榜
+    </ion-list>
+    <ion-list *ngSwitchCase="'encyclopedias'">
+      知识百科
+    </ion-list>
+  </div>
+
+
+</ion-content>

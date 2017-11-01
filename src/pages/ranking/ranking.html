@@ -1,0 +1,56 @@
+<!-- <ion-content>
+  <ion-row>
+    <ion-col col-3>
+      <ion-segment [(ngModel)]="lg">
+        <ion-slides direction="vertical" slidesPerView="15">
+          <ion-slide *ngFor="let item of logo;" class="a" style="height:50px;">
+            <ion-segment-button value="{{item.logoName}}" (click)="pushName(item)">
+              {{item.logoName}}
+            </ion-segment-button>
+          </ion-slide>
+        </ion-slides>
+      </ion-segment>
+    </ion-col>
+    <ion-col col-9>
+      <div [(ngSwitch)]="lg">
+        <ion-list *ngFor="let list of list.sort">
+          {{list.sortName}}
+        </ion-list>
+      </div>
+
+    </ion-col>
+  </ion-row>
+</ion-content> -->
+<ion-content>
+
+  <ion-row>
+    <ion-col col-3 style="">
+      <ion-slides direction="vertical" slidesPerView="20">
+        <ion-slide *ngFor="let item of logo;" (click)="pushName(item)" style="font-size:14px;">
+          {{item.logoName}}
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+    <ion-col col-9 class="b" style="overflow:auto">
+
+      <ion-item *ngFor="let list of list.sort;let i = index">
+        <ion-row>
+          <ion-col col-12>
+            <ion-list-header text-center>
+              -- {{list.sortName}} --
+            </ion-list-header>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4 text-wrap style="font-size:12px;" *ngFor="let sortlist of list.sortList">
+            {{sortlist.name}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+
+  <!-- </ion-col>
+  </ion-row> -->
+</ion-content>

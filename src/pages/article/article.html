@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar class="article" #header>
+    <ion-title #header>{{article.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content fullscreen (ionScroll)="scrollEvent($event)">
+  <ion-list>
+    <!-- 封面图 -->
+    <ion-item>
+      <img src="{{article.articleImgSrc}}" alt="">
+    </ion-item>
+    <!-- 时间和作者 -->
+    <ion-item>
+      <p item-left>{{article.time}}</p>
+      <p>{{article.author}}</p>
+    </ion-item>
+    <!-- 文章副标题 -->
+    <ion-item>
+      <p>{{article.subTitle}}</p>
+    </ion-item>
+    <ion-item *ngFor="let product of article.body">
+      <p>{{product.productId}} -- {{product.productName}}</p>
+      <img src="{{product.img}}" alt="">
+      <!-- 商品描述 -->
+      <p>{{product.desc}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

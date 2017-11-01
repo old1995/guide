@@ -1,0 +1,9 @@
+page-rank-detail {
+  .segment-button {
+    overflow: visible; // display: inline-table
+    display: block; // float: left;
+  }
+  .text {
+    white-space: normal;
+  }
+}

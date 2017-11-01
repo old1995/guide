@@ -1,0 +1,42 @@
+page-ranking {
+  .segment-button {
+    // overflow: visible; // display: inline-table
+    display: block; // float: left;
+  }
+  ion-slide {
+    height: 50px;
+  }
+  .c {
+    // overflow: hidden;
+  } //   #nav {
+  //     position: absolute; // top: 45px;
+  //     bottom: 0;
+  //     width: 90px;
+  //     overflow: hidden;
+  //   }
+  //   #nav ul {
+  //     display: block;
+  //     width: 100px;
+  //     height: 100%;
+  //     overflow-x: hidden;
+  //     overflow-y: scroll;
+  //   }
+  //   #nav ul li {
+  //     border-bottom: 1px solid #e0e0e0;
+  //     text-align: center;
+  //     line-height: 50px;
+  //     width: 89px;
+  //     height: 49px;
+  //     font-size: 12px;
+  //   }
+  //   #nav .nav-blur {
+  //     color: #252525;
+  //     border-right: 1px solid #e0e0e0;
+  //     background-color: #f3f4f6;
+  //   }
+  //   #nav .nav-current {
+  //     color: red;
+  //     border-right: 1px solid #fff;
+  //     background-color: #fff;
+  //   }
+}

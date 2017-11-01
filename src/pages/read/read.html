@@ -1,0 +1,103 @@
+<ion-content>
+  <div>
+    <ion-segment [(ngModel)]="nav">
+      <!-- [(ngModel)]="pet" -->
+      <ion-segment-button value="choosen">
+        精选
+      </ion-segment-button>
+      <ion-segment-button value="read">
+        悦读
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="nav">
+    <ion-list *ngSwitchCase="'choosen'">
+      <!-- 精选轮播 -->
+      <ion-slides pager spaceBetween="10">
+        <ion-slide>
+          <img src="assets/img/zgr.gif" alt="">
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/img/zgr.gif" alt="">
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/img/zgr.gif" alt="">
+        </ion-slide>
+      </ion-slides>
+      <!-- 小图轮播 -->
+      <ion-slides spaceBetween="2" slidesPerView="3">
+        <ion-slide>
+          <img src="http://www.placehold.it/100x50" alt="">
+        </ion-slide>
+        <ion-slide>
+          <img src="http://www.placehold.it/100x50" alt="">
+        </ion-slide>
+        <ion-slide>
+          <img src="http://www.placehold.it/100x50" alt="">
+        </ion-slide>
+        <ion-slide>
+          <img src="http://www.placehold.it/100x50" alt="">
+        </ion-slide>
+        <ion-slide>
+          <img src="http://www.placehold.it/100x50" alt="">
+        </ion-slide>
+      </ion-slides>
+      <ion-list>
+        <ion-item *ngFor="let list of featurelist" (click)="goToRankPage(list)">
+          <!-- 标题 -->
+          <ion-row>
+            <ion-col col-1>
+              <span [ngSwitch]="list.type">
+                <div *ngSwitchCase="1">
+                  <p class="sub-title">
+                    精
+                    <br>选</p>
+                </div>
+                <div *ngSwitchCase="2">
+                  <p class="sub-title">
+                    榜
+                    <br>单</p>
+                </div>
+              </span>
+
+            </ion-col>
+            <ion-col col-11>
+              <p class="title">{{list.name}}</p>
+            </ion-col>
+          </ion-row>
+          <!-- 正文 -->
+          <ion-row>
+            <ion-col col-1>
+              <p>
+                {{list.pushTime|date:'MMM'}}
+                <br>{{list.pushTime|date:'d'}}
+              </p>
+            </ion-col>
+            <ion-col col-11 class="test">
+              <p class="sec-title">{{list.desc}}</p>
+              <ion-item class="img">
+                <img src="{{list.imgSrc}}" alt="">
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'read'">
+      <ion-item>
+        <ion-row>
+          <ion-col col-4>
+            <img src="http://www.placehold.it/100x150" alt="">
+          </ion-col>
+          <ion-col col-4>
+            <img src="http://www.placehold.it/100x150" alt="">
+          </ion-col>
+          <ion-col col-4>
+            <img src="http://www.placehold.it/100x150" alt="">
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
