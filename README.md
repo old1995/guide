@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 NOT DONE!!
+=======
+This is a project by [Ionic](http://ionicframework.com/docs/);
+
+>>>>>>> a14a41a061651c7d50be78e23b53f383892aebf5
 ## How to use this template
 
 *This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
